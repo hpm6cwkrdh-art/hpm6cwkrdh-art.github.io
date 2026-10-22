@@ -45,12 +45,14 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
 footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--subtle)}
 .pgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--col-gap);padding-top:24px;align-items:start}
 .media{position:relative;border-radius:var(--r-media);overflow:hidden;aspect-ratio:1/1;background:var(--panel)}
-.media svg{width:100%;height:100%;display:block}
+.media svg,.media img{width:100%;height:100%;display:block;object-fit:cover}
 .pgrid>div:first-child{position:sticky;top:24px}
 .thumbs{display:flex;gap:12px;margin-top:12px}
 .thumbs div{width:100px;height:100px;border-radius:var(--r-thumb);background:var(--panel);overflow:hidden;border:2px solid transparent}
 .thumbs div.on{border-color:var(--ink)}
-.thumbs svg{width:100%;height:100%;display:block}
+.thumbs svg,.thumbs img{width:100%;height:100%;display:block;object-fit:cover}
+.thumbs div{cursor:pointer}
+.credit{margin-top:8px}.credit a{text-decoration:underline;text-underline-offset:2px}
 .stack>*+*{margin-top:16px}
 .stack .body{max-width:none}
 @media(max-width:860px){.pgrid{grid-template-columns:1fr}nav{display:none}}
@@ -67,13 +69,8 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <header><div class="wrap"><a class="logo" href="index.html">Bönan</a><nav><a href="#">Prenumeration</a><a href="#">Kaffe</a><a href="#">Utrustning</a><a href="#">Vanliga frågor</a></nav><span class="lang">SV</span></div></header>
 
 <main class="wrap"><div class="pgrid">
-<div><div class="media"><svg viewBox="0 0 600 600"><rect width="600" height="600" fill="#f1ede6"/><ellipse cx="300" cy="500" rx="150" ry="14" fill="#e3ddd3"/>
-<path d="M200 140h200l20 360H180z" fill="#c9b79c"/><path d="M200 140h200v26H200z" fill="#b8a586"/>
-<rect x="235" y="250" width="130" height="150" rx="4" fill="#fbf9f5"/>
-<text x="300" y="300" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="22" letter-spacing="-.5" fill="#141414">Morgon</text>
-<text x="300" y="322" text-anchor="middle" font-family="Inter,Arial" font-weight="500" font-size="10" letter-spacing="2" fill="#8a8a8a">ETIOPIEN · LJUS</text>
-<line x1="255" y1="345" x2="345" y2="345" stroke="#e6e6e6"/><text x="300" y="372" text-anchor="middle" font-family="Inter,Arial" font-size="10" fill="#6b6b6b">250 g · Hela bönor</text>
-<g fill="#5a3e2b"><ellipse cx="455" cy="470" rx="13" ry="9" transform="rotate(30 455 470)"/><ellipse cx="480" cy="490" rx="13" ry="9" transform="rotate(-20 480 490)"/><ellipse cx="130" cy="488" rx="13" ry="9" transform="rotate(10 130 488)"/></g></svg><span class="chip">Rostat i Malmö varje tisdag</span></div></div>
+<div><div class="media"><img id="main" src="img/kaffe-chemex.jpg" alt="Chemex med ångande kaffe vid ett fönster"><span class="chip">Rostat i Malmö varje tisdag</span></div>
+<div class="thumbs"><div class="on" data-src="img/kaffe-chemex.jpg"><img src="img/kaffe-chemex.jpg" alt=""></div><div data-src="img/kaffe-pourover.jpg"><img src="img/kaffe-pourover.jpg" alt=""></div><div data-src="img/kaffe-bonor.jpg"><img src="img/kaffe-bonor.jpg" alt=""></div></div></div>
 <div class="stack" style="padding-top:8px">
 <span class="label">Prenumeration</span>
 <h1>Kaffe hem i brevlådan</h1>
@@ -90,6 +87,7 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <a class="link" href="#">Köp en gång istället</a>
 <div class="badges"><div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg><b>Pausa när du vill</b><span>Inga bindningstider</span></div><div><svg viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 13 11"/></svg><b>Direkthandel</b><span>Spårbart till gården</span></div><div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><b>Fri frakt</b><span>Passar i brevlådan</span></div></div>
 <p class="fine" style="margin-top:20px">Första leveransen skickas inom tre vardagar. Du kan ändra, pausa eller avsluta under Mina sidor fram till två dagar före nästa rostning.</p>
+<p class="fine credit">Foto: <a href="https://unsplash.com/photos/pour-over-coffeemaker-on-glass-table-uDFAD5PS-pI">Caleb Dow</a> och <a href="https://unsplash.com/photos/coffee-is-being-brewed-with-filter-and-pour-over-6-NMxQzO0Ks">Blake Wisz</a> via Unsplash, <a href="https://www.pexels.com/photo/coffee-beans-on-digital-scale-in-natural-light-29162438/">Rodrigo Ortega</a> via Pexels.</p>
 </div></div></main>
 <footer><div class="wrap"><span>© 2026 Bönan</span><span>Stilstudie · web-style-nordic-minimal</span></div></footer>
-<script>document.querySelectorAll('.ro input').forEach(i=>i.addEventListener('change',()=>{i.closest('.rg').querySelectorAll('.ro').forEach(l=>l.classList.toggle('on',l.contains(i)))}))</script></body></html>
+<script>document.querySelectorAll('.ro input').forEach(i=>i.addEventListener('change',()=>{i.closest('.rg').querySelectorAll('.ro').forEach(l=>l.classList.toggle('on',l.contains(i)))}))</script><script>document.querySelectorAll('.thumbs div').forEach(t=>t.addEventListener('click',()=>{document.getElementById('main').src=t.dataset.src;t.parentNode.querySelectorAll('div').forEach(d=>d.classList.toggle('on',d===t))}))</script></body></html>

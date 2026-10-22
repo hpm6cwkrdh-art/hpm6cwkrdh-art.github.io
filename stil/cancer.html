@@ -45,12 +45,14 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
 footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--subtle)}
 .pgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--col-gap);padding-top:24px;align-items:start}
 .media{position:relative;border-radius:var(--r-media);overflow:hidden;aspect-ratio:1/1;background:var(--panel)}
-.media svg{width:100%;height:100%;display:block}
+.media svg,.media img{width:100%;height:100%;display:block;object-fit:cover}
 .pgrid>div:first-child{position:sticky;top:24px}
 .thumbs{display:flex;gap:12px;margin-top:12px}
 .thumbs div{width:100px;height:100px;border-radius:var(--r-thumb);background:var(--panel);overflow:hidden;border:2px solid transparent}
 .thumbs div.on{border-color:var(--ink)}
-.thumbs svg{width:100%;height:100%;display:block}
+.thumbs svg,.thumbs img{width:100%;height:100%;display:block;object-fit:cover}
+.thumbs div{cursor:pointer}
+.credit{margin-top:8px}.credit a{text-decoration:underline;text-underline-offset:2px}
 .stack>*+*{margin-top:16px}
 .stack .body{max-width:none}
 @media(max-width:860px){.pgrid{grid-template-columns:1fr}nav{display:none}}
@@ -59,21 +61,8 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <header><div class="wrap"><a class="logo" href="index.html">Aska</a><nav><a href="#">Kollektion</a><a href="#">Biverkningar</a><a href="#">Present</a><a href="#">Vanliga frågor</a></nav><span class="lang">SV</span></div></header>
 
 <main class="wrap"><div class="pgrid">
-<div><div class="media"><svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-<rect width="600" height="600" fill="#efece7"/>
-<ellipse cx="300" cy="520" rx="170" ry="16" fill="#e2ded7"/>
-<g transform="translate(300 300) scale(1) translate(-300 -300)">
-<rect x="185" y="110" width="230" height="400" rx="6" fill="#fbfaf8"/>
-<rect x="185" y="110" width="230" height="92" rx="6" fill="#f1efeb"/>
-<line x1="185" y1="202" x2="415" y2="202" stroke="#e0ddd7"/>
-<g fill="#e9e3d6"><rect x="212" y="92" width="22" height="28" rx="3"/><rect x="240" y="88" width="22" height="32" rx="3"/><rect x="268" y="94" width="22" height="26" rx="3"/></g>
-<text x="300" y="250" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="26" letter-spacing="-0.5" fill="#141414">ASKA</text>
-<text x="300" y="276" text-anchor="middle" font-family="Inter,Arial" font-weight="500" font-size="11" letter-spacing="2.5" fill="#8a8a8a">LUNGCANCER · CLASSIC</text>
-<rect x="205" y="330" width="190" height="150" fill="#141414"/>
-<text x="300" y="398" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="24" fill="#fff">Rökning</text>
-<text x="300" y="428" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="24" fill="#fff">dödar</text>
-</g></svg><span class="chip">Fotograferad före första blosset</span></div>
-<div class="thumbs"><div class="on"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1efeb"/><rect x="33" y="18" width="34" height="62" rx="2" fill="#fbfaf8"/><rect x="36" y="55" width="28" height="21" fill="#141414"/><text x="50" y="40" text-anchor="middle" font-family="Inter,Arial" font-size="6" font-weight="600" fill="#141414">ASKA</text><text x="50" y="92" text-anchor="middle" font-family="Inter,Arial" font-size="7" font-weight="500" fill="#6b6b6b">Lunga</text></svg></div><div><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1efeb"/><rect x="33" y="18" width="34" height="62" rx="2" fill="#fbfaf8"/><rect x="36" y="55" width="28" height="21" fill="#141414"/><text x="50" y="40" text-anchor="middle" font-family="Inter,Arial" font-size="6" font-weight="600" fill="#141414">ASKA</text><text x="50" y="92" text-anchor="middle" font-family="Inter,Arial" font-size="7" font-weight="500" fill="#6b6b6b">Strupe</text></svg></div><div><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1efeb"/><rect x="33" y="18" width="34" height="62" rx="2" fill="#fbfaf8"/><rect x="36" y="55" width="28" height="21" fill="#141414"/><text x="50" y="40" text-anchor="middle" font-family="Inter,Arial" font-size="6" font-weight="600" fill="#141414">ASKA</text><text x="50" y="92" text-anchor="middle" font-family="Inter,Arial" font-size="7" font-weight="500" fill="#6b6b6b">KOL</text></svg></div><div><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1efeb"/><rect x="33" y="18" width="34" height="62" rx="2" fill="#fbfaf8"/><rect x="36" y="55" width="28" height="21" fill="#141414"/><text x="50" y="40" text-anchor="middle" font-family="Inter,Arial" font-size="6" font-weight="600" fill="#141414">ASKA</text><text x="50" y="92" text-anchor="middle" font-family="Inter,Arial" font-size="7" font-weight="500" fill="#6b6b6b">Stroke</text></svg></div></div></div>
+<div><div class="media"><img id="main" src="img/aska-askkopp.jpg" alt="Brinnande cigarett i en askkopp av glas" style="object-position:50% 50%"><span class="chip">Fotograferad före första blosset</span></div>
+<div class="thumbs"><div class="on" data-src="img/aska-askkopp.jpg"><img src="img/aska-askkopp.jpg" alt=""></div><div data-src="img/aska-tra.jpg"><img src="img/aska-tra.jpg" alt=""></div><div data-src="img/aska-rok.jpg"><img src="img/aska-rok.jpg" alt=""></div></div></div>
 <div class="stack" style="padding-top:8px">
 <span class="label">Signaturkollektionen</span>
 <h1>Lungcancer, Classic</h1>
@@ -87,8 +76,9 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <a class="link" href="#">Eller sluta nu, det är gratis</a>
 <div class="badges"><div><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><b>Garanterat beroende</b><span>Redan efter några paket</span></div><div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>Leverans livet ut</b><span>Hosta ingår utan extra kostnad</span></div><div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg><b>Ingen ångerrätt</b><span>Gäller även lungorna</span></div></div>
 <p class="fine" style="margin-top:20px">Rökning orsakar cirka 12 000 dödsfall i Sverige varje år. Biverkningar kan omfatta cancer, hjärtinfarkt, stroke och impotens. Lämpar sig inte för någon.</p>
+<p class="fine credit">Foto: <a href="https://www.pexels.com/photo/burning-cigarette-stick-on-ashtray-11952950/">Patrick</a>, <a href="https://www.pexels.com/photo/old-ashtray-with-burnt-cigarettes-on-rough-surface-31113084/">LiL Tian</a> och <a href="https://www.pexels.com/photo/cigarette-smoke-floating-in-dark-room-6681857/">Jill Burrow</a> via Pexels.</p>
 </div></div>
 <section class="satir"><p>Det här är satir och en kampanj mot rökning. Inget säljs här. Vill du sluta? Ring Sluta-röka-linjen, 020-84 00 00. Det är gratis.</p></section>
 </main>
 <footer><div class="wrap"><span>© 2026 Aska</span><span>Satir mot rökning · Sluta-röka-linjen 020-84 00 00</span></div></footer>
-</body></html>
+<script>document.querySelectorAll('.thumbs div').forEach(t=>t.addEventListener('click',()=>{document.getElementById('main').src=t.dataset.src;t.parentNode.querySelectorAll('div').forEach(d=>d.classList.toggle('on',d===t))}))</script></body></html>

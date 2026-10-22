@@ -45,15 +45,18 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
 footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--subtle)}
 .pgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--col-gap);padding-top:24px;align-items:start}
 .media{position:relative;border-radius:var(--r-media);overflow:hidden;aspect-ratio:1/1;background:var(--panel)}
-.media svg{width:100%;height:100%;display:block}
+.media svg,.media img{width:100%;height:100%;display:block;object-fit:cover}
 .pgrid>div:first-child{position:sticky;top:24px}
 .thumbs{display:flex;gap:12px;margin-top:12px}
 .thumbs div{width:100px;height:100px;border-radius:var(--r-thumb);background:var(--panel);overflow:hidden;border:2px solid transparent}
 .thumbs div.on{border-color:var(--ink)}
-.thumbs svg{width:100%;height:100%;display:block}
+.thumbs svg,.thumbs img{width:100%;height:100%;display:block;object-fit:cover}
+.thumbs div{cursor:pointer}
+.credit{margin-top:8px}.credit a{text-decoration:underline;text-underline-offset:2px}
 .stack>*+*{margin-top:16px}
 .stack .body{max-width:none}
 @media(max-width:860px){.pgrid{grid-template-columns:1fr}nav{display:none}}
+.heroimg{aspect-ratio:5/6}
 .hero{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--col-gap);align-items:center;padding-top:32px}
 .big{font-size:48px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:16px 0 20px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:96px;padding-top:48px;position:relative}.steps:before{content:'';position:absolute;top:0;left:var(--gutter);right:var(--gutter);border-top:1px solid var(--line)}
@@ -72,17 +75,7 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <div style="max-width:380px;margin-top:24px"><button class="cta">Ladda upp din bild</button>
 <a class="link" href="#steg" style="margin-top:16px">Så funkar det</a></div>
 </div>
-<div class="media heroimg"><svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-<rect width="600" height="600" fill="#f2efe9"/>
-<rect x="0" y="430" width="600" height="170" fill="#e7e2d9"/>
-<ellipse cx="300" cy="470" rx="125" ry="16" fill="#d9d3c8"/>
-<rect x="198" y="112" width="204" height="28" rx="8" fill="#c9c9c9"/>
-<ellipse cx="300" cy="112" rx="102" ry="14" fill="#dcdcdc"/>
-<rect x="186" y="140" width="228" height="325" rx="16" fill="#fbfaf7"/>
-<clipPath id="c"><rect x="186" y="140" width="228" height="325" rx="16"/></clipPath>
-<g clip-path="url(#c)"><circle cx="300" cy="300" r="70" fill="#e9c46a"/><path d="M186 340 Q250 300 300 335 T414 320 V465 H186Z" fill="#2f4858"/><path d="M186 380 Q260 350 320 380 T414 370 V465 H186Z" fill="#1f3340"/><text x="300" y="215" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="22" fill="#2f4858">MIDSOMMAR -26</text></g>
-<rect x="186" y="140" width="228" height="325" rx="16" fill="none" stroke="rgba(0,0,0,.06)"/>
-</svg><span class="chip">Passar 33 cl och 50 cl</span></div>
+<div class="media heroimg"><img src="img/beersleeves-picknick.jpg" alt="Vänner med burkar på en sommarpicknick vid klipporna" style="object-position:50% 60%"><span class="chip">Passar 33 cl och 50 cl</span></div>
 </section>
 <section class="wrap steps" id="steg">
 <div class="sp"><span class="n">1</span><h3>Ladda upp</h3><p class="body">Välj ett foto från mobilen. Vi beskär det åt dig, du ser resultatet direkt.</p></div>
@@ -90,7 +83,7 @@ footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:s
 <div class="sp"><span class="n">3</span><h3>Vi trycker</h3><p class="body">Tryckt på beställning och skickat hem till dig inom Norden.</p></div>
 </section>
 <section class="wrap" style="margin-top:64px"><div class="badges"><div><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><b>Din egen bild</b><span>Foto, logga eller text</span></div><div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><b>Frakt 99 kr</b><span>Leverans inom Norden</span></div><div><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Säker betalning</b><span>Kort via Stripe</span></div></div>
-<p class="fine" style="margin-top:20px;text-align:center">Neopren, 4 mm. Tryck runt hela sleeven. Bilden bör vara minst 1500 px bred för skarpast resultat.</p></section>
+<p class="fine" style="margin-top:20px;text-align:center">Neopren, 4 mm. Tryck runt hela sleeven. Bilden bör vara minst 1500 px bred för skarpast resultat.</p><p class="fine credit" style="text-align:center">Foto: <a href="https://www.pexels.com/photo/friends-sharing-soda-cans-during-picnic-9353430/">PNW Production</a> via Pexels.</p></section>
 </main>
 <footer><div class="wrap"><span>© 2026 Beersleeves</span><span>Stilstudie · web-style-nordic-minimal</span></div></footer>
 </body></html>
