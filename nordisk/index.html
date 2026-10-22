@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beersleeves · Nordisk minimal i fyra tappningar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--ink-2:#3d3d3d;--muted:#6b6b6b;--subtle:#8a8a8a;--line:#e6e6e6;--panel:#f5f4f1;--bg:#fdfbf7;--font:"Inter","Helvetica Neue",Arial,sans-serif;--g:clamp(20px,4vw,48px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 15px/1.6 var(--font);color:var(--ink);background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1600px;margin:0 auto;padding:0 var(--g)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:600 22px/1 var(--font);letter-spacing:-.02em}
+header nav{font:500 15px/1 var(--font);color:var(--ink-2)}
+.intro{padding:40px 0 36px}
+.intro small{font:500 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--subtle)}
+h1{font:500 34px/1.2 var(--font);letter-spacing:-.02em;margin:12px 0 10px}
+.intro p{font-size:17px;color:var(--muted);max-width:62ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px;padding-bottom:72px}
+.card .shot{display:block;background:var(--panel);border-radius:14px;overflow:hidden;border:1px solid var(--line);transition:transform .2s}
+.card:hover .shot{transform:translateY(-3px)}
+.card img{display:block;width:100%;aspect-ratio:1440/1000;object-fit:cover}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:16px}
+.meta h2{font:600 17px/1.3 var(--font);letter-spacing:-.01em}
+.meta h2 span{color:var(--subtle);font-weight:500;margin-right:8px}
+.meta p{font-size:15px;color:var(--muted);margin-top:4px}
+.meta .go{font:500 15px/1 var(--font);color:var(--ink-2);white-space:nowrap}
+.meta .go:after{content:" →"}
+footer .wrap{border-top:1px solid var(--line);padding:22px var(--g) 40px;font-size:13px;color:var(--subtle);display:flex;justify-content:space-between}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="wrap"><a class="logo" href="./">Beersleeves</a><nav><a href="../stil/">Fler stilstudier</a></nav></div></header>
+<main class="wrap">
+<section class="intro"><small>Stilstudie</small><h1>Nordisk minimal, fyra tappningar</h1>
+<p>Samma stilsystem, samma innehåll och samma foto. Bara ytan skiftar: mörkt läge, varmt, kyligt galleri och en dämpad accentfärg. Klicka för att se hela sidan.</p></section>
+<section class="grid">
+<a class="card" href="mork.html"><span class="shot"><img src="prev/mork.jpg" alt="Förhandsvisning: Mörk"></span><div class="meta"><div><h2><span>1</span>Mörk</h2><p>Varmt nästan svart, benvit text och en ljus pill-knapp. Grått avstämt för kontrast på mörkt.</p></div><span class="go">Öppna</span></div></a>
+<a class="card" href="varm.html"><span class="shot"><img src="prev/varm.jpg" alt="Förhandsvisning: Varm"></span><div class="meta"><div><h2><span>2</span>Varm</h2><p>Varm benvit botten, varma grå toner och djup brunsvart text.</p></div><span class="go">Öppna</span></div></a>
+<a class="card" href="galleri.html"><span class="shot"><img src="prev/galleri.jpg" alt="Förhandsvisning: Galleri"></span><div class="meta"><div><h2><span>3</span>Galleri</h2><p>Kyligt rent vitt, större foto, mer luft och en större redaktionell rubrik.</p></div><span class="go">Öppna</span></div></a>
+<a class="card" href="accent.html"><span class="shot"><img src="prev/accent.jpg" alt="Förhandsvisning: Accent"></span><div class="meta"><div><h2><span>4</span>Accent</h2><p>Grundsystemet plus en dämpad skogsgrön accent på priset och små detaljer. Knappen förblir svart.</p></div><span class="go">Öppna</span></div></a>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Beersleeves</span><span>Foto: PNW Production via Pexels</span></div></footer>
+</body></html>

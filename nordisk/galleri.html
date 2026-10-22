@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galleri · Beersleeves · Din bild på burken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --fs-fine:12px;--fs-small:13px;--fs-body:15px;--fs-lead:17px;--fs-h1:26px;--fs-price:24px;
+  --ink:#141414;--ink-2:#3d3d3d;--muted:#6b6b6b;--subtle:#8a8a8a;
+  --line:#e6e6e6;--panel:#f5f5f4;--bg:#fff;
+  --cta:#111;--cta-hover:#2e2e2e;
+  --r-pill:999px;--r-panel:14px;--r-media:12px;--r-thumb:8px;
+  --page-max:1240px;--gutter:clamp(20px,4vw,48px);--col-gap:clamp(32px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 var(--fs-body)/1.6 var(--font);color:var(--ink);background:var(--bg);text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--page-max);margin:0 auto;padding:0 var(--gutter)}
+header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:600;font-size:22px;letter-spacing:-.02em;color:var(--ink)}
+nav{display:flex;gap:36px}
+nav a{font-size:15px;font-weight:500;color:var(--ink-2);transition:color .15s}
+nav a:hover{color:var(--ink)}
+.lang{font-size:13px;font-weight:500;color:var(--ink-2)}
+h1{font-size:var(--fs-h1);font-weight:500;letter-spacing:-.015em;line-height:1.2}
+h2{font-size:22px;font-weight:500;letter-spacing:-.015em;line-height:1.25}
+h3{font-size:15px;font-weight:600;line-height:1.3}
+.lead{font-size:var(--fs-lead);color:var(--muted);line-height:1.5}
+.body{color:var(--muted);line-height:1.65;max-width:46ch}
+.price{font-size:var(--fs-price);font-weight:600;letter-spacing:-.015em}
+.label{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--subtle)}
+.pnote{font-weight:500;color:var(--muted);font-size:17px;letter-spacing:0}
+.cta{display:flex;align-items:center;justify-content:center;width:100%;height:56px;border:0;border-radius:var(--r-pill);background:var(--cta);color:var(--cta-ink,#fff);font:500 16px var(--font);cursor:pointer;transition:background .15s;-webkit-font-smoothing:antialiased}
+.cta:hover{background:var(--cta-hover)}
+.link{display:block;text-align:center;font-size:15px;font-weight:500;color:var(--ink-2)}
+.opt{background:var(--panel);border-radius:var(--r-panel);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.opt .k{color:var(--muted);margin-right:auto}.opt .k b{color:var(--ink);font-weight:500}.opt a{color:var(--ink-2);font-weight:500}
+.badges{background:var(--panel);border-radius:16px;padding:24px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+.badges svg{width:20px;height:20px;stroke:var(--ink-2);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
+.badges b{display:block;font-size:13px;font-weight:600;color:var(--ink)}
+.badges span{display:block;font-size:12px;line-height:1.4;color:var(--subtle);margin-top:2px}
+.fine{font-size:12.5px;line-height:1.5;color:var(--subtle)}
+.chip{position:absolute;left:16px;bottom:16px;background:var(--chip-bg,rgba(245,243,240,.9));border-radius:var(--r-pill);padding:6px 12px;font-size:12px;font-weight:500;color:var(--ink-2)}
+footer{margin-top:96px;border-top:1px solid var(--line)}
+footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--subtle)}
+.pgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--col-gap);padding-top:24px;align-items:start}
+.media{position:relative;border-radius:var(--r-media);overflow:hidden;aspect-ratio:1/1;background:var(--panel)}
+.media svg,.media img{width:100%;height:100%;display:block;object-fit:cover}
+.pgrid>div:first-child{position:sticky;top:24px}
+.thumbs{display:flex;gap:12px;margin-top:12px}
+.thumbs div{width:100px;height:100px;border-radius:var(--r-thumb);background:var(--panel);overflow:hidden;border:2px solid transparent}
+.thumbs div.on{border-color:var(--ink)}
+.thumbs svg,.thumbs img{width:100%;height:100%;display:block;object-fit:cover}
+.thumbs div{cursor:pointer}
+.credit{margin-top:8px}.credit a{text-decoration:underline;text-underline-offset:2px}
+.stack>*+*{margin-top:16px}
+.stack .body{max-width:none}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr}nav{display:none}}
+.heroimg{aspect-ratio:5/6}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--col-gap);align-items:center;padding-top:32px}
+.big{font-size:48px;font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:16px 0 20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:96px;padding-top:48px;position:relative}.steps:before{content:'';position:absolute;top:0;left:var(--gutter);right:var(--gutter);border-top:1px solid var(--line)}
+.sp .n{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--panel);align-items:center;justify-content:center;font-size:13px;font-weight:600;margin-bottom:16px}
+.sp h3{margin-bottom:8px}
+@media(max-width:860px){.hero,.steps{grid-template-columns:1fr}.big{font-size:36px}}
+:root{--bg:#fff;--panel:#f4f5f6;--line:#e8eaed;--ink:#111315;--ink-2:#3a3d42;--muted:#64676d;--subtle:#83878d;
+--cta:#111315;--cta-hover:#2c2f33;--chip-bg:rgba(255,255,255,.9);--page-max:1360px;--col-gap:clamp(40px,6vw,96px)}
+header .wrap{height:88px}
+.hero{grid-template-columns:.82fr 1.3fr;padding-top:24px;align-items:end}
+.heroimg{aspect-ratio:1/1.02}
+.big{font-size:68px;font-weight:500;letter-spacing:-.04em;line-height:1;margin:24px 0 28px}
+.label{letter-spacing:.1em}
+.htext{padding-bottom:12px}
+.steps{margin-top:160px;padding-top:64px;gap:64px}
+.badges{padding:32px 16px}
+footer{margin-top:140px}
+</style></head><body>
+<header><div class="wrap"><a class="logo" href="./">Beersleeves</a><nav><a href="#">Så funkar det</a><a href="#">Motiv</a><a href="#">Företag</a><a href="#">Vanliga frågor</a></nav><span class="lang">SV</span></div></header>
+
+<main>
+<section class="wrap hero">
+<div class="htext">
+<span class="label">Beersleeves · Tryckt på beställning</span>
+<h1 class="big">Din bild.<br>Din burk.</h1>
+<p class="lead" style="max-width:34ch">Ladda upp ett foto, så trycker vi det på en burkkylare i neopren. Perfekt till möhippan, kräftskivan eller bara fredag.</p>
+<p class="price" style="margin-top:28px"><span class="pval">89 kr</span> <span class="pnote">per sleeve · frakt 99 kr</span></p>
+<div style="max-width:380px;margin-top:24px"><button class="cta">Ladda upp din bild</button>
+<a class="link" href="#steg" style="margin-top:16px">Så funkar det</a></div>
+</div>
+<div class="media heroimg"><img src="img/beersleeves-picknick.jpg" alt="Vänner med burkar på en sommarpicknick vid klipporna" style="object-position:50% 60%"><span class="chip">Passar 33 cl och 50 cl</span></div>
+</section>
+<section class="wrap steps" id="steg">
+<div class="sp"><span class="n">1</span><h3>Ladda upp</h3><p class="body">Välj ett foto från mobilen. Vi beskär det åt dig, du ser resultatet direkt.</p></div>
+<div class="sp"><span class="n">2</span><h3>Välj antal</h3><p class="body">En till dig själv eller tjugo till hela laget. Samma pris per styck.</p></div>
+<div class="sp"><span class="n">3</span><h3>Vi trycker</h3><p class="body">Tryckt på beställning och skickat hem till dig inom Norden.</p></div>
+</section>
+<section class="wrap" style="margin-top:64px"><div class="badges"><div><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg><b>Din egen bild</b><span>Foto, logga eller text</span></div><div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><b>Frakt 99 kr</b><span>Leverans inom Norden</span></div><div><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Säker betalning</b><span>Kort via Stripe</span></div></div>
+<p class="fine" style="margin-top:20px;text-align:center">Neopren, 4 mm. Tryck runt hela sleeven. Bilden bör vara minst 1500 px bred för skarpast resultat.</p><p class="fine credit" style="text-align:center">Foto: <a href="https://www.pexels.com/photo/friends-sharing-soda-cans-during-picnic-9353430/">PNW Production</a> via Pexels.</p></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Beersleeves</span><span>Nordisk minimal · Galleri</span></div></footer>
+</body></html>
