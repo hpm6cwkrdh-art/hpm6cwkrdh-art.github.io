@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><title>WebSocket Echo</title>
-<style>body{font-family:system-ui;max-width:600px;margin:2rem auto}#log{border:1px solid #ccc;height:300px;overflow:auto;padding:.5rem;white-space:pre-wrap}input{width:75%}</style></head>
-<body><h1>WebSocket Echo</h1>
+<style>
+*{box-sizing:border-box}body{font-family:system-ui,sans-serif;background:linear-gradient(135deg,#1e1b4b,#0f172a);color:#e2e8f0;min-height:100vh;margin:0;display:flex;align-items:center;justify-content:center}
+main{width:min(600px,92vw);background:#1e293bcc;border:1px solid #334155;border-radius:16px;padding:1.5rem;box-shadow:0 20px 50px #0008}
+h1{margin:0 0 .5rem;font-size:1.6rem}#s{padding:.15rem .6rem;border-radius:99px;background:#334155;font-size:.85rem}
+#log{background:#0f172a;border-radius:10px;height:300px;overflow:auto;padding:.8rem;white-space:pre-wrap;font-family:ui-monospace,monospace;margin:1rem 0}
+form{display:flex;gap:.5rem}input{flex:1;padding:.7rem;border-radius:8px;border:1px solid #475569;background:#0f172a;color:inherit}
+button{padding:.7rem 1.2rem;border:0;border-radius:8px;background:#6366f1;color:#fff;font-weight:600;cursor:pointer}button:hover{background:#818cf8}
+</style></head>
+<body><main><h1>WebSocket Echo</h1>
 <p>Status: <span id="s">connecting…</span></p>
 <div id="log"></div>
-<form id="f"><input id="m" placeholder="Type a message" autocomplete="off"><button>Send</button></form>
+<form id="f"><input id="m" placeholder="Type a message" autocomplete="off"><button>Send</button></form></main>
 <script>
 const log=t=>{const l=document.getElementById('log');l.textContent+=t+"\n";l.scrollTop=l.scrollHeight};
 const ws=new WebSocket('wss://echo.websocket.org');
