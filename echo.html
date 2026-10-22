@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>WebSocket Echo</title>
+<style>body{font-family:system-ui;max-width:600px;margin:2rem auto}#log{border:1px solid #ccc;height:300px;overflow:auto;padding:.5rem;white-space:pre-wrap}input{width:75%}</style></head>
+<body><h1>WebSocket Echo</h1>
+<p>Status: <span id="s">connecting…</span></p>
+<div id="log"></div>
+<form id="f"><input id="m" placeholder="Type a message" autocomplete="off"><button>Send</button></form>
+<script>
+const log=t=>{const l=document.getElementById('log');l.textContent+=t+"\n";l.scrollTop=l.scrollHeight};
+const ws=new WebSocket('wss://echo.websocket.org');
+ws.onopen=()=>s.textContent='connected';
+ws.onclose=()=>s.textContent='closed';
+ws.onerror=()=>s.textContent='error';
+ws.onmessage=e=>log('← '+e.data);
+f.onsubmit=e=>{e.preventDefault();if(!m.value)return;ws.send(m.value);log('→ '+m.value);m.value=''};
+</script></body></html>
