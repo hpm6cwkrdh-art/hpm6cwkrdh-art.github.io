@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bönan · Prenumeration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --fs-fine:12px;--fs-small:13px;--fs-body:15px;--fs-lead:17px;--fs-h1:26px;--fs-price:24px;
+  --ink:#141414;--ink-2:#3d3d3d;--muted:#6b6b6b;--subtle:#8a8a8a;
+  --line:#e6e6e6;--panel:#f5f5f4;--bg:#fff;
+  --cta:#111;--cta-hover:#2e2e2e;
+  --r-pill:999px;--r-panel:14px;--r-media:12px;--r-thumb:8px;
+  --page-max:1240px;--gutter:clamp(20px,4vw,48px);--col-gap:clamp(32px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 var(--fs-body)/1.6 var(--font);color:var(--ink);background:var(--bg);text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--page-max);margin:0 auto;padding:0 var(--gutter)}
+header .wrap{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:600;font-size:22px;letter-spacing:-.02em;color:var(--ink)}
+nav{display:flex;gap:36px}
+nav a{font-size:15px;font-weight:500;color:var(--ink-2);transition:color .15s}
+nav a:hover{color:var(--ink)}
+.lang{font-size:13px;font-weight:500;color:var(--ink-2)}
+h1{font-size:var(--fs-h1);font-weight:500;letter-spacing:-.015em;line-height:1.2}
+h2{font-size:22px;font-weight:500;letter-spacing:-.015em;line-height:1.25}
+h3{font-size:15px;font-weight:600;line-height:1.3}
+.lead{font-size:var(--fs-lead);color:var(--muted);line-height:1.5}
+.body{color:var(--muted);line-height:1.65;max-width:46ch}
+.price{font-size:var(--fs-price);font-weight:600;letter-spacing:-.015em}
+.label{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--subtle)}
+.cta{display:flex;align-items:center;justify-content:center;width:100%;height:56px;border:0;border-radius:var(--r-pill);background:var(--cta);color:#fff;font:500 16px var(--font);cursor:pointer;transition:background .15s;-webkit-font-smoothing:antialiased}
+.cta:hover{background:var(--cta-hover)}
+.link{display:block;text-align:center;font-size:15px;font-weight:500;color:var(--ink-2)}
+.opt{background:var(--panel);border-radius:var(--r-panel);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.opt .k{color:var(--muted);margin-right:auto}.opt .k b{color:var(--ink);font-weight:500}.opt a{color:var(--ink-2);font-weight:500}
+.badges{background:var(--panel);border-radius:16px;padding:24px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center}
+.badges svg{width:20px;height:20px;stroke:var(--ink-2);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
+.badges b{display:block;font-size:13px;font-weight:600;color:var(--ink)}
+.badges span{display:block;font-size:12px;line-height:1.4;color:var(--subtle);margin-top:2px}
+.fine{font-size:12.5px;line-height:1.5;color:var(--subtle)}
+.chip{position:absolute;left:16px;bottom:16px;background:rgba(245,243,240,.9);border-radius:var(--r-pill);padding:6px 12px;font-size:12px;font-weight:500;color:var(--ink-2)}
+footer{margin-top:96px;border-top:1px solid var(--line)}
+footer .wrap{padding-top:32px;padding-bottom:48px;display:flex;justify-content:space-between;font-size:13px;color:var(--subtle)}
+.pgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--col-gap);padding-top:24px;align-items:start}
+.media{position:relative;border-radius:var(--r-media);overflow:hidden;aspect-ratio:1/1;background:var(--panel)}
+.media svg{width:100%;height:100%;display:block}
+.pgrid>div:first-child{position:sticky;top:24px}
+.thumbs{display:flex;gap:12px;margin-top:12px}
+.thumbs div{width:100px;height:100px;border-radius:var(--r-thumb);background:var(--panel);overflow:hidden;border:2px solid transparent}
+.thumbs div.on{border-color:var(--ink)}
+.thumbs svg{width:100%;height:100%;display:block}
+.stack>*+*{margin-top:16px}
+.stack .body{max-width:none}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr}nav{display:none}}
+:root{--bg:#fdfbf7;--panel:#f5f4f1}
+.rg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;margin-top:8px!important}
+.ro{position:relative;border-radius:12px;background:var(--panel);padding:14px 16px;cursor:pointer;border:2px solid transparent}
+.ro.on{border-color:var(--ink);background:#fff}
+.ro input{position:absolute;opacity:0}
+.ro .t{display:block;font-weight:500;color:var(--ink)}
+.ro .s{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.sum{display:flex;justify-content:space-between;align-items:baseline;padding:8px 2px 0}
+.sum .k{color:var(--muted)}
+.stack>h3{margin-top:24px}</style></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">Bönan</a><nav><a href="#">Prenumeration</a><a href="#">Kaffe</a><a href="#">Utrustning</a><a href="#">Vanliga frågor</a></nav><span class="lang">SV</span></div></header>
+
+<main class="wrap"><div class="pgrid">
+<div><div class="media"><svg viewBox="0 0 600 600"><rect width="600" height="600" fill="#f1ede6"/><ellipse cx="300" cy="500" rx="150" ry="14" fill="#e3ddd3"/>
+<path d="M200 140h200l20 360H180z" fill="#c9b79c"/><path d="M200 140h200v26H200z" fill="#b8a586"/>
+<rect x="235" y="250" width="130" height="150" rx="4" fill="#fbf9f5"/>
+<text x="300" y="300" text-anchor="middle" font-family="Inter,Arial" font-weight="600" font-size="22" letter-spacing="-.5" fill="#141414">Morgon</text>
+<text x="300" y="322" text-anchor="middle" font-family="Inter,Arial" font-weight="500" font-size="10" letter-spacing="2" fill="#8a8a8a">ETIOPIEN · LJUS</text>
+<line x1="255" y1="345" x2="345" y2="345" stroke="#e6e6e6"/><text x="300" y="372" text-anchor="middle" font-family="Inter,Arial" font-size="10" fill="#6b6b6b">250 g · Hela bönor</text>
+<g fill="#5a3e2b"><ellipse cx="455" cy="470" rx="13" ry="9" transform="rotate(30 455 470)"/><ellipse cx="480" cy="490" rx="13" ry="9" transform="rotate(-20 480 490)"/><ellipse cx="130" cy="488" rx="13" ry="9" transform="rotate(10 130 488)"/></g></svg><span class="chip">Rostat i Malmö varje tisdag</span></div></div>
+<div class="stack" style="padding-top:8px">
+<span class="label">Prenumeration</span>
+<h1>Kaffe hem i brevlådan</h1>
+<p class="lead">Nyrostat specialkaffe från små gårdar. Du väljer mängd och takt, vi väljer bönorna.</p>
+<h3 style="margin-top:24px">Smakprofil</h3>
+<div class="rg"><label class="ro on"><input type="radio" name="p" checked><span class="t">Ljus</span><span class="s">Bärig, blommig</span></label><label class="ro"><input type="radio" name="p"><span class="t">Mellan</span><span class="s">Choklad, nötter</span></label><label class="ro"><input type="radio" name="p"><span class="t">Mörk</span><span class="s">Kola, rostat</span></label></div>
+<h3>Mängd</h3>
+<div class="rg"><label class="ro"><input type="radio" name="m"><span class="t">250 g</span><span class="s">ca 16 koppar</span></label><label class="ro on"><input type="radio" name="m" checked><span class="t">500 g</span><span class="s">ca 32 koppar</span></label><label class="ro"><input type="radio" name="m"><span class="t">1 kg</span><span class="s">ca 64 koppar</span></label></div>
+<h3>Hur ofta</h3>
+<div class="rg"><label class="ro on"><input type="radio" name="f" checked><span class="t">Varannan vecka</span><span class="s">Mest populär</span></label><label class="ro"><input type="radio" name="f"><span class="t">Var fjärde vecka</span><span class="s">Lagom för två</span></label></div>
+<div class="opt"><span class="k">Malning: <b>Hela bönor</b></span><a href="#">Ändra</a></div>
+<div class="sum"><span class="k">Per leverans, fri frakt</span><span class="price">229 kr</span></div>
+<button class="cta">Starta prenumeration</button>
+<a class="link" href="#">Köp en gång istället</a>
+<div class="badges"><div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></svg><b>Pausa när du vill</b><span>Inga bindningstider</span></div><div><svg viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 13 11"/></svg><b>Direkthandel</b><span>Spårbart till gården</span></div><div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><b>Fri frakt</b><span>Passar i brevlådan</span></div></div>
+<p class="fine" style="margin-top:20px">Första leveransen skickas inom tre vardagar. Du kan ändra, pausa eller avsluta under Mina sidor fram till två dagar före nästa rostning.</p>
+</div></div></main>
+<footer><div class="wrap"><span>© 2026 Bönan</span><span>Stilstudie · web-style-nordic-minimal</span></div></footer>
+<script>document.querySelectorAll('.ro input').forEach(i=>i.addEventListener('change',()=>{i.closest('.rg').querySelectorAll('.ro').forEach(l=>l.classList.toggle('on',l.contains(i)))}))</script></body></html>
